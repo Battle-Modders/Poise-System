@@ -1,0 +1,95 @@
+::PoiseSystem.HooksMod.hook("scripts/skills/skill", function(q) {
+	q.m.IsDamagingPoise <- false;
+	q.m.IsStunningFromPoise <- false;
+
+	q.getHitFactors = @(__original) function( _targetTile )
+	{
+		local ret = __original(_targetTile);
+
+		if (_targetTile.IsOccupiedByActor)
+		{
+			local targetEntity = _targetTile.getEntity();
+			if (!targetEntity.getCurrentProperties().IsImmuneToStun && this.m.IsStunningFromPoise)
+			{
+				local targetThresholdSkill = targetEntity.getSkills().getSkillByID("effects.poise");
+				local turnsStunnedBody = targetThresholdSkill.wouldStun(this.getContainer().getActor(), this, ::Const.BodyPart.Body);
+				local turnsStunnedHead = targetThresholdSkill.wouldStun(this.getContainer().getActor(), this, ::Const.BodyPart.Head);
+
+				ret.push({
+					icon = "ui/tooltips/positive.png",
+					text = "Will stun for " + ::MSU.Text.colorGreen(turnsStunnedBody) + "/" + ::MSU.Text.colorGreen(turnsStunnedHead) + " turn(s)",
+				});
+			}
+		}
+
+		return ret;
+	}
+});
+
+::PoiseSystem.HooksMod.hookTree("scripts/skills/skill", function(q) {
+	if (q.contains("create"))
+	{
+		q.create = @(__original) function()
+		{
+			__original();
+
+			if (this.m.IsStunningFromPoise && "StunChance" in this.m)
+			{
+				this.m.StunChance = 0;	// Skills that now use the Composure system should no longer use the StunChance
+			}
+		}
+	}
+
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+
+		if (this.m.IsDamagingPoise && this.getContainer().getActor() != null)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Poise Damage: " + this.getContainer().getActor().getCurrentProperties().getPoiseDamage()
+			});
+		}
+
+		if (this.m.IsStunningFromPoise)
+		{
+			foreach(index, entry in ret)
+			{
+				if (entry.text.find("%[/color] chance to s"))	// remove the entry about stunchance. This string is weird because it also needs to catch strike_down_skill
+				{
+					ret.remove(index);
+					break;
+				}
+			}
+
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Breaking the targets Poise will stun it"
+			});
+		}
+
+		return ret;
+	}
+
+	q.onUse = @(__original) function( _user, _targetTile )
+	{
+		if (this.m.IsStunningFromPoise)
+		{
+			local properties = this.getContainer().getActor().getCurrentProperties();
+			local oldMaceSpec = properties.IsSpecializedInMaces;
+			properties.IsSpecializedInMaces = false;	// This will disable all vanilla StunChance based stuns
+			local ret = __original(_user, _targetTile);
+			properties.IsSpecializedInMaces = oldMaceSpec;
+			return ret;
+		}
+		else
+		{
+			return __original(_user, _targetTile);
+		}
+	}
+});
