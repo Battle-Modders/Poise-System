@@ -1,5 +1,5 @@
 ::Const.CharacterProperties.IsImmuneToStunFromPoise <- false;
-::Const.CharacterProperties.PoiseMax <- 100;
+::Const.CharacterProperties.PoiseMax <- ::PoiseSystem.Poise.Default.Default;
 ::Const.CharacterProperties.PoiseMult <- 1.0;
 ::Const.CharacterProperties.getPoiseMax <- function()
 {
