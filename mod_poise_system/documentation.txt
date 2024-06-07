@@ -1,0 +1,17 @@
+### Description ###
+
+Write a short summary about what your mod does without going into specific. This text can then be copy&pasted and used whenever you publish the mod
+
+### Future Plans: ###
+
+- This is a checklist of ideas that you consider adding to the mod in the future
+- This will help users to not suggest things to you that you already have plans for
+- And its a basic checklist for yourself if you return to one of your older mods later on
+
+### Changes: ###
+
+0.1.1
+	- vastly rework and improve template using modern hooks
+
+0.1.0
+	- released on discord
