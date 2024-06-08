@@ -35,6 +35,7 @@ Here are the base Maximum Poise values for entities
 - **Steelbrow** negates the Headshot bonus for Poise Damage
 - **Mace Mastery** grants 50% more Poise Damage while a Mace is equipped
 - **Vigilant** grants +10 Poise when your end your turn for every remaining Action Point until the start of the next turn
+- **Versatile Swordsman** grants +120 Poise Damage if a one-handed sword is equipped and +180 Poise Damage if a two-handed sword is equipped
 
 ### Skill Adjustments
 - All skills that had a Stun Chance (!= 0) before now use the Composure system
