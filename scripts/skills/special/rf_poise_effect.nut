@@ -59,6 +59,14 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 		this.onPoiseDamageReceived(_attacker, _skill, attackPower, true, _properties);
 	}
 
+	function onAfterUpdate( _properties )
+	{
+		if (_properties.IsImmuneToStun)
+		{
+			_properties.IsImmuneToStunFromPoise = true;
+		}
+	}
+
 // New Functions
 	function getPoise( _properties = null )
 	{
@@ -81,10 +89,15 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 		local turnsStunned = 0;
 		if (_skill.m.IsStunningFromPoise)
 		{
-			if (_properties == null) _properties = this.getContainer().getActor().getCurrentProperties();
+			if (_properties == null)
+			{
+				_properties = this.getContainer().getActor().getCurrentProperties();
+			}
+
+			if (_properties.IsImmuneToStunFromPoise) return turnsStunned;
 
 			turnsStunned = this.calculateTurnsStunned(_properties.getPoiseMax());
-			if (turnsStunned == 0) return;
+			if (turnsStunned == 0) return turnsStunned;
 
 			local stunnedEffect = this.getContainer().getSkillByID("effects.stunned");
 			if (stunnedEffect == null)
