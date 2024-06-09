@@ -13,6 +13,6 @@
 	::include("mod_poise_system/load");		// Load mod adjustments and other hooks
 });
 
-::Hardened.HooksMod.queue(">mod_reforged", function() {
+::PoiseSystem.HooksMod.queue(">mod_reforged", function() {
 	::include("mod_poise_system/config/z_nested_tooltips");
 }, ::Hooks.QueueBucket.FirstWorldInit);
