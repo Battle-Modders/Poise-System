@@ -20,7 +20,7 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 		this.m.ID = "effects.poise";
 		this.m.Name = "Poise";
 		this.m.Description = ::Reforged.Mod.Tooltips.parseString("Certain skills, like [stunning attacks|Concept.StunningAttack], damage your [Poise|Concept.Poise] and apply an effect when they reduce it to 0 or below. If that happens or at the start of your turn your Poise is reset back to your maximum Poise.");
-		this.m.Icon = "ui/traits/trait_icon_15.png";	// Placeholder - TODO: create unique icon instead of usin
+		this.m.Icon = "ui/settlement_status/settlement_effect_40.png";	// slave revolt situation - TODO: create unique icon
 		this.m.Type = ::Const.SkillType.StatusEffect;
 		this.m.Order = ::Const.SkillOrder.Any;
 		this.m.IsActive = false;
