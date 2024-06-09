@@ -15,8 +15,8 @@ This mod is the first implementation of the Stun Threshold system.
   - 1H Human Maces: **80**
   - 1H Orc Maces: **120**
   - 2H Hybrid Maces and Polemaces: **120**
-  - remaining 2H Maces: **160**
-Here are the base Maximum Poise values for entities
+  - Remaining 2H Maces: **160**
+- Here are the base Maximum Poise values for entities
   - Default = 100
   - Goblin = 60
   - Human = 100
