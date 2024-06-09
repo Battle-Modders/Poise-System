@@ -19,7 +19,7 @@
 			id = 8,
 			type = "text",
 			icon = "ui/icons/sturdiness.png",
-			text = ::Reforged.Mod.Tooltips.parseString("[Poise|Concept.Poise] is increased by " + ::MSU.Text.colorizeMult(this.m.PoiseMult))
+			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMult(this.m.PoiseMult) + " more [Poise|Concept.Poise]")
 		});
 
 		return ret;

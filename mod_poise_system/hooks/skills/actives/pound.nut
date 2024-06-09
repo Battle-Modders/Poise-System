@@ -1,5 +1,5 @@
 ::PoiseSystem.HooksMod.hook("scripts/skills/actives/pound", function(q) {
-	q.m.PoiseDamageMult <- 2.0;	// This will make Pound able to stun humans on a head hit as most 2 handed flails have 40 PoiseDamage
+	q.m.PoiseDamageMult <- 2.0;	// This will make Pound able to stun humans on a head hit as 2 handed flails have 40 PoiseDamage
 
 	q.getTooltip = @(__original) function()
 	{
@@ -12,7 +12,7 @@
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "Poise Damage is increased by " + ::MSU.Text.colorizePercentage((this.m.PoiseDamageMult - 1.0) * 100, {AddSign = false})
+					text = ::Reforged.Mod.Tooltips.parseString("Deal " + ::MSU.Text.colorizeMult(this.m.PoiseDamageMult) + " more [Poise Damage|Concept.PoiseDamage]")
 				}
 			]);
 		}

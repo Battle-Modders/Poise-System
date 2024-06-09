@@ -27,7 +27,7 @@ local adjustedDescriptions = [
 	 		Effects = [{
  				Type = ::UPD.EffectType.Passive,
  				Description = [
-					"[Poise|Concept.Poise] is increased by " + ::MSU.Text.colorGreen("50%"),
+					"Gain " + ::MSU.Text.colorGreen("50%") + " more [Poise|Concept.Poise]",
 					"Any negative status effect with a finite duration (e.g. Bleeding, Charmed) has its duration reduced to " + ::MSU.Text.colorGreen(1) + " turn.",
 					"Status effects that have their effects grow weaker over several turns (e.g. Goblin Poison) are at their weakest state from the start."
 				]
