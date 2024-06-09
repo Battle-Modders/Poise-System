@@ -11,7 +11,10 @@ Write a short summary about what your mod does without going into specific. This
 ### Changes: ###
 
 0.1.1
-	- vastly rework and improve template using modern hooks
+	- Change Poise effect icon to the slave revolt situation icon
+	- Orc Trophy no longer grants stun immunity. It now grants 200% more Poise
+	- Improve some tooltips, replacing "increased" with "more"
+	- Fix misleading log when breaking the poise of a stun immune enemy
 
 0.1.0
 	- released on discord

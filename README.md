@@ -44,12 +44,14 @@ Here are the base Maximum Poise values for entities
 - **Charge** inflicts 100 Poise Damage and dazes the target if no stun was applied
 - **Unstoppable Charge** inflicts 150 Poise Damage (if stun was rolled as opposed to knock back) and staggers the target if no stun was applied
 
+### Items
+- **Orc Trophy** no longer grants stun immunity. It now grants 200% more Poise
+
 ## Todo
 - Icon for new Composure effect
 - Icon for Composure stat lines
 - Smarter enemy AI that can predict stuns
 - Some casual playtesting
-- Review
 
 # Requirements
 

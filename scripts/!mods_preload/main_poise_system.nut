@@ -1,7 +1,7 @@
 ::PoiseSystem <- {
 	ID = "mod_poise_system",
 	Name = "Reforged Poise System",
-	Version = "0.1.0",
+	Version = "0.1.1",
 }
 
 ::PoiseSystem.HooksMod <- ::Hooks.register(::PoiseSystem.ID, ::PoiseSystem.Version, ::PoiseSystem.Name);
