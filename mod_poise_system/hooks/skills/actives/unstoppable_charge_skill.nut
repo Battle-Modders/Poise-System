@@ -14,7 +14,7 @@
 		__original(_skill, _targetEntity, _properties);
 		if (_skill == this)
 		{
-			_properties.PoiseDamage = this.m.PoiseDamageOverwrite;
+			_properties.PoiseDamage = this.m.BasePoiseDamage;
 		}
 	}
 

@@ -2,6 +2,6 @@
 	q.onAdded = @(__original) function()
 	{
 		__original();
-		this.getContainer().getActor().m.BaseProperties.PoiseMax = ::Reforged.Poise.Default.Orc;
+		this.getContainer().getActor().m.BaseProperties.PoiseMax = ::PoiseSystem.Poise.Default.Orc;
 	}
 });

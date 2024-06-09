@@ -1,6 +1,5 @@
 ::PoiseSystem.HooksMod.hook("scripts/skills/actives/charge", function(q) {
 	q.m.BasePoiseDamage <- 100;
-	q.m.MaxHeightDifference <- 1;
 
 	q.create = @(__original) function()
 	{
@@ -10,7 +9,7 @@
 	}
 
 	// This is just so that the tooltip will display the correct poise damage
-	q.onAnySkillUsed = @() function( _skill, _targetEntity, _properties )
+	q.onAnySkillUsed = @(__original) function( _skill, _targetEntity, _properties )
 	{
 		__original(_skill, _targetEntity, _properties);
 		if (_skill == this)
@@ -33,7 +32,7 @@
 
 			local tile = myTile.getNextTile(i);
 			if (!tile.IsOccupiedByActor) continue;
-			if (::Math.abs(tile.Level - myTile.Level) < this.m.MaxHeightDifference) continue;	// This is new. Charges will now ignore enemies that are too high/low
+			if (::Math.abs(tile.Level - myTile.Level) > _tag.Skill.m.MaxLevelDifference) continue;	// This is new. Charges will now ignore enemies that are too high/low
 
 			local actor = myTile.getNextTile(i).getEntity();
 			if (actor.isAlliedWith(_user) || actor.getCurrentProperties().IsStunned) continue;
@@ -44,7 +43,7 @@
 		// Potentially repel this attack? Currently only by spearwall
 		foreach (actor in potentialVictims)
 		{
-			if (this.handlePotentialRepel(_tag, _user, actor) == true) return;	// If any of the victims repel this attack it is ended early
+			if (_tag.Skill.handlePotentialRepel(_tag, _user, actor) == true) return;	// If any of the victims repel this attack it is ended early
 		}
 
 		if (_tag.OldTile.IsVisibleForPlayer || myTile.IsVisibleForPlayer)
@@ -54,7 +53,7 @@
 
 		if (potentialVictims.len() != 0)
 		{
-			this.applyEffectToTarget(_user, ::MSU.Array.rand(potentialVictims));
+			_tag.Skill.applyEffectToTarget(_user, ::MSU.Array.rand(potentialVictims), _tag);
 		}
 	}
 
@@ -108,7 +107,7 @@
 	}
 
 	// Applies the appropriate effect to the target that was chosen. This is similar to the unstoppable_charge_skill function
-	q.applyEffectToTarget <- function( _user, _target )
+	q.applyEffectToTarget <- function( _user, _target, _tag )
 	{
 		if (!_target.isHiddenToPlayer())
 		{
