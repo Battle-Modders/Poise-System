@@ -61,10 +61,6 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (_properties.IsImmuneToStun)
-		{
-			_properties.IsImmuneToStunFromPoise = true;
-		}
 	}
 
 // New Functions
@@ -102,7 +98,7 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 			local stunnedEffect = this.getContainer().getSkillByID("effects.stunned");
 			if (stunnedEffect == null)
 			{
-				stunnedEffect = ::new("scripts/skills/effects/stunned_effect");
+				stunnedEffect = ::new("scripts/skills/effects/ps_poise_stunned_effect");
 				this.getContainer().add(stunnedEffect);
 			}
 			stunnedEffect.setTurns(turnsStunned);
