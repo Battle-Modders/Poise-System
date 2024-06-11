@@ -17,4 +17,5 @@ adjustPoiseMax("enemies/serpent", ::PoiseSystem.Poise.Default.Beast);
 adjustPoiseMax("goblin", ::PoiseSystem.Poise.Default.Goblin);
 adjustPoiseMax("human", ::PoiseSystem.Poise.Default.Human);
 adjustPoiseMax("enemies/unhold", ::PoiseSystem.Poise.Default.Unhold);
-adjustPoiseMax("human", ::PoiseSystem.Poise.Default.Human);
+adjustPoiseMax("enemies/unhold_bog", ::PoiseSystem.Poise.Default.Unhold);
+adjustPoiseMax("enemies/unhold_frost", ::PoiseSystem.Poise.Default.Unhold);
