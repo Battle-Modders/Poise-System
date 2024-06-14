@@ -10,6 +10,10 @@ Write a short summary about what your mod does without going into specific. This
 
 ### Changes: ###
 
+0.1.4
+	- Fix orcs and unholds being accidentally made stunnable by non-poise skills
+	- Fix bog and frost unholds having incorrect poise
+
 0.1.3
 	- Fix orc and unhold fights not working correctly
 
