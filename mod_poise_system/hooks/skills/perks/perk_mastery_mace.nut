@@ -4,7 +4,6 @@
 	q.onUpdate = @(__original) function( _properties )
 	{
 		__original(_properties);
-		_properties.IsSpecializedInMaces = false;	//
 
 		if (this.getContainer().getActor().isDisarmed()) return false;
 
