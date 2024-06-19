@@ -1,29 +1,6 @@
 ::PoiseSystem.HooksMod.hook("scripts/skills/skill", function(q) {
 	q.m.IsDamagingPoise <- false;
 	q.m.IsStunningFromPoise <- false;
-
-	q.getHitFactors = @(__original) function( _targetTile )
-	{
-		local ret = __original(_targetTile);
-
-		if (_targetTile.IsOccupiedByActor)
-		{
-			local targetEntity = _targetTile.getEntity();
-			if (!targetEntity.getCurrentProperties().IsImmuneToStun && this.m.IsStunningFromPoise)
-			{
-				local targetThresholdSkill = targetEntity.getSkills().getSkillByID("effects.poise");
-				local turnsStunnedBody = targetThresholdSkill.wouldStun(this.getContainer().getActor(), this, ::Const.BodyPart.Body);
-				local turnsStunnedHead = targetThresholdSkill.wouldStun(this.getContainer().getActor(), this, ::Const.BodyPart.Head);
-
-				ret.push({
-					icon = "ui/tooltips/positive.png",
-					text = "Will stun for " + ::MSU.Text.colorGreen(turnsStunnedBody) + "/" + ::MSU.Text.colorGreen(turnsStunnedHead) + " turn(s)",
-				});
-			}
-		}
-
-		return ret;
-	}
 });
 
 ::PoiseSystem.HooksMod.hookTree("scripts/skills/skill", function(q) {

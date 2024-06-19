@@ -63,6 +63,26 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 	{
 	}
 
+// MSU Functions
+	function onGetHitFactors( _skill, _targetTile, _tooltip )
+	{
+		if (_targetTile.IsOccupiedByActor)
+		{
+			local targetEntity = _targetTile.getEntity();
+			if (!targetEntity.getCurrentProperties().IsImmuneToStun && _skill.m.IsStunningFromPoise)
+			{
+				local targetThresholdSkill = targetEntity.getSkills().getSkillByID("effects.poise");
+				local turnsStunnedBody = targetThresholdSkill.wouldStun(this.getContainer().getActor(), this, ::Const.BodyPart.Body);
+				local turnsStunnedHead = targetThresholdSkill.wouldStun(this.getContainer().getActor(), this, ::Const.BodyPart.Head);
+
+				_tooltip.push({
+					icon = "ui/tooltips/positive.png",
+					text = "Will stun for " + ::MSU.Text.colorGreen(turnsStunnedBody) + "/" + ::MSU.Text.colorGreen(turnsStunnedHead) + " turn(s)",
+				});
+			}
+		}
+	}
+
 // New Functions
 	function getPoise( _properties = null )
 	{
