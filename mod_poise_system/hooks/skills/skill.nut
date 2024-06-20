@@ -52,21 +52,4 @@
 
 		return ret;
 	}
-
-	q.onUse = @(__original) function( _user, _targetTile )
-	{
-		if (this.m.IsStunningFromPoise)
-		{
-			local properties = this.getContainer().getActor().getCurrentProperties();
-			local oldMaceSpec = properties.IsSpecializedInMaces;
-			properties.IsSpecializedInMaces = false;	// This will disable all vanilla StunChance based stuns
-			local ret = __original(_user, _targetTile);
-			properties.IsSpecializedInMaces = oldMaceSpec;
-			return ret;
-		}
-		else
-		{
-			return __original(_user, _targetTile);
-		}
-	}
 });
