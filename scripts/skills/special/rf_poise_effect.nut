@@ -59,10 +59,6 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 		this.onPoiseDamageReceived(_attacker, _skill, attackPower, true, _properties);
 	}
 
-	function onAfterUpdate( _properties )
-	{
-	}
-
 // MSU Functions
 	function onGetHitFactors( _skill, _targetTile, _tooltip )
 	{
