@@ -49,6 +49,12 @@
 				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_user) + " has staggered " + ::Const.UI.getColorizedEntityName(_target) + " for 1 turn");
 			}
 
+			// In vanilla these properties also prevent staggered but here I choose to apply staggered still
+			if (_target.getCurrentProperties().IsImmuneToKnockBackAndGrab || _target.getCurrentProperties().IsRooted)
+			{
+				return;
+			}
+
 			local knockToTile = this.findTileToKnockBackTo(_user.getTile(), _targetTile);
 			if (knockToTile == null) return;
 
