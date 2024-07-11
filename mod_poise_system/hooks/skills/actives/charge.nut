@@ -70,6 +70,7 @@
 
 			if (!_myself.isAlive() || _myself.isDying()) return true;
 
+			local myTile = _myself.getTile();
 			local dir = myTile.getDirectionTo(_tag.OldTile);
 			if (myTile.hasNextTile(dir))
 			{
