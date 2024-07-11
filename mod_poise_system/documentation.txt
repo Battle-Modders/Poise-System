@@ -10,6 +10,11 @@ Write a short summary about what your mod does without going into specific. This
 
 ### Changes: ###
 
+0.1.6
+	- Fix orc charge ignoring spearwall
+	- Fix unhold charge ignoring immunity to knockback
+	- Fix stun prediction in tooltip
+
 0.1.5
 	- Fix mace mastery not reducing fatigue cost
 
