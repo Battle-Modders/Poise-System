@@ -1,6 +1,6 @@
 # Description
 
-This mod is the first implementation of the Stun Threshold system.
+This mod is the first implementation of a Stun Threshold system.
 
 # Current Summary
 
