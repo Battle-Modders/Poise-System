@@ -15,6 +15,8 @@
 	::PoiseSystem.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 
 	::include("mod_poise_system/load");		// Load mod adjustments and other hooks
+
+	::Hooks.registerCSS("ui/mods/mod_poise_system/css_hooks/controls.css");
 });
 
 ::PoiseSystem.HooksMod.queue(">mod_reforged", function() {
