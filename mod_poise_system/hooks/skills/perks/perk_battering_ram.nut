@@ -6,4 +6,16 @@
 		__original(_properties);
 		_properties.PoiseMult *= this.m.PoiseMult;
 	}
+
+	q.getDescription = @() function()
+	{
+		return ::Reforged.Mod.Tooltips.parseString(::UPD.getDescription({
+			Effects = [{
+				Type = ::UPD.EffectType.Passive,
+				Description = [
+					"Gain " + ::MSU.Text.colorGreen("50%") + " more [Poise|Concept.Poise]",
+				],
+			}],
+		}));
+	}
 });
