@@ -8,6 +8,9 @@ This mod is the first implementation of a Stun Threshold system.
 
 ### Changes: ###
 
+0.1.9
+	- Compatibility update for Reforged 0.6.0	
+
 0.1.8
 	- Add a new progressbar displaying the poise of a character
 	- Adjust Battering Ram description to reflect its new effect
