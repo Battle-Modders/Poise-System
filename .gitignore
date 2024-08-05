@@ -2,3 +2,6 @@
 brushes/
 gfx/*.png
 !gfx/*/.png
+.bbbuilder/
+*.sublime-project
+*.sublime-workspace
