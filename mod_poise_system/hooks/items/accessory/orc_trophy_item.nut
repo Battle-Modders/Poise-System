@@ -10,7 +10,7 @@
 			if (entry.id == 10)
 			{
 				entry.icon = "ui/icons/sturdiness.png";
-				entry.text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMult(this.m.PoiseMult) + " more [Poise|Concept.Poise]");
+				entry.text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(this.m.PoiseMult) + " [Poise|Concept.Poise]");
 			}
 		}
 

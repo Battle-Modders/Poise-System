@@ -13,7 +13,7 @@
 			Effects = [{
 				Type = ::UPD.EffectType.Passive,
 				Description = [
-					"Gain " + ::MSU.Text.colorGreen("50%") + " more [Poise|Concept.Poise]",
+					"Gain " + ::MSU.Text.colorizeMultWithText(this.m.PoiseMult) + " [Poise|Concept.Poise]",
 				],
 			}],
 		}));

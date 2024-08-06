@@ -19,7 +19,7 @@
 			id = 8,
 			type = "text",
 			icon = "ui/icons/sturdiness.png",
-			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMult(this.m.PoiseMult) + " more [Poise|Concept.Poise]")
+			text = ::Reforged.Mod.Tooltips.parseString(::MSU.Text.colorizeMultWithText(this.m.PoiseMult) + " [Poise|Concept.Poise]")
 		});
 
 		return ret;
