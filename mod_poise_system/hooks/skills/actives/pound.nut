@@ -12,7 +12,7 @@
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = ::Reforged.Mod.Tooltips.parseString("Deal " + ::MSU.Text.colorizeMult(this.m.PoiseDamageMult) + " more [Poise Damage|Concept.PoiseDamage]")
+					text = ::Reforged.Mod.Tooltips.parseString("Deal " + ::MSU.Text.colorizeMultWithText(this.m.PoiseDamageMult) + " [Poise Damage|Concept.PoiseDamage]")
 				}
 			]);
 		}
