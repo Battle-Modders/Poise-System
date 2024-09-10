@@ -44,7 +44,6 @@ local adjustedDescriptions = [
  				Description = [
  					"Hits to the head no longer cause critical damage to this character, which also lowers the risk of sustaining debilitating head [injuries|Concept.Injury] significantly.",
  					"Hits to the head against this character no longer deal " + ::MSU.Text.colorRed("50%") + " more [Poise Damage|Concept.PoiseDamage]."
- 					"Grants passive immunity against [Cull|Perk+perk_rf_cull]."
  				]
  			}]
 	 	})
