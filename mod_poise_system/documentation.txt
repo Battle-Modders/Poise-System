@@ -5,11 +5,16 @@ This mod is the first implementation of a Stun Threshold system.
 ### Future Plans: ###
 
 - Find a solution for future (submods) stun immunity effects to work as intended
+- Find a solution for other weapons who add knockout skills but are not classified as maces/flails/instruments
 
 ### Changes: ###
 
+0.1.10
+	- Rename the reforged **Poise** perk into **Flexible** to avoid confusion
+	- Fix musicial instrumnents not having poise
+
 0.1.9
-	- Compatibility update for Reforged 0.6.0	
+	- Compatibility update for Reforged 0.6.0
 
 0.1.8
 	- Add a new progressbar displaying the poise of a character

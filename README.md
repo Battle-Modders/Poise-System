@@ -12,10 +12,10 @@ This mod is the first implementation of a Stun Threshold system.
 ## Overview
 - All Maces and all two-handed flails have a fixed **Poise Damage**.
   - 2H Flails: **40**
-  - 1H Human Maces: **80**
+  - 1H Human Maces/Instruments: **80**
   - 1H Orc Maces: **120**
-  - 2H Hybrid Maces and Polemaces: **120**
-  - Remaining 2H Maces: **160**
+  - 2H Hybrid Maces/Instruments and Polemaces: **120**
+  - Remaining 2H Maces/Instruments: **160**
 - Here are the base Maximum Poise values for entities
   - Default = 100
   - Goblin = 60
@@ -30,6 +30,7 @@ This mod is the first implementation of a Stun Threshold system.
 - Enemies that are immune to stuns via base properties (Lindwurm, Geist, Schrat, Ifrit, etc.) are also immune to stuns from Poise Damage
 
 ### Perk Adjustments
+- The **Poise** perk is now called **Flexible** to avoid confusion
 - **Resilient** grants 50% more Poise
 - **Battering Ram** (Orcs, Unholds) no longer grants stun immunity. It now grants 50% more Poise.
 - **Steelbrow** negates the Headshot bonus for Poise Damage

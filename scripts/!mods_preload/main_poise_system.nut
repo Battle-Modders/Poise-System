@@ -1,7 +1,7 @@
 ::PoiseSystem <- {
 	ID = "mod_poise_system",
 	Name = "Reforged Poise System",
-	Version = "0.1.9",
+	Version = "0.1.10",
 	GitHubURL = "https://github.com/Battle-Modders/Poise-System",
 }
 
