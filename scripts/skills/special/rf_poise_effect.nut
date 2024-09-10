@@ -72,7 +72,7 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 
 			_tooltip.push({
 				icon = "ui/tooltips/positive.png",
-				text = "Will stun for " + ::MSU.Text.colorGreen(turnsStunnedBody) + "/" + ::MSU.Text.colorGreen(turnsStunnedHead) + " turn(s)",
+				text = "Will stun for " + ::MSU.Text.colorPositive(turnsStunnedBody) + "/" + ::MSU.Text.colorPositive(turnsStunnedHead) + " turn(s)",
 			});
 		}
 	}
@@ -119,7 +119,7 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 
 			if (_printLog)
 			{
-				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_attacker) + " has stunned " + ::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " for " + ::MSU.Text.colorGreen(turnsStunned) + " turn");
+				::Tactical.EventLog.log(::Const.UI.getColorizedEntityName(_attacker) + " has stunned " + ::Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " for " + ::MSU.Text.colorPositive(turnsStunned) + " turn");
 			}
 
 			this.resetPoise();
