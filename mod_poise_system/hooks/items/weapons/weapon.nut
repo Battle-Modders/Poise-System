@@ -54,7 +54,7 @@
 				{
 					this.m.PoiseDamage = 40;	// Orc Flails currently don't have an extra value
 				}
-				else if (this.isWeaponType(::Const.Items.WeaponType.Mace))
+				else if (this.isWeaponType(::Const.Items.WeaponType.Mace) || this.isWeaponType(::Const.Items.WeaponType.Musical))
 				{
 					if (this.isHybrid() || this.m.RangeMax == 2)	// e.g. Goedendag or Polemace
 					{
@@ -68,9 +68,9 @@
 			}
 			else if (this.isItemType(::Const.Items.ItemType.OneHanded))
 			{
-				if (this.isWeaponType(::Const.Items.WeaponType.Mace))
+				if (this.isWeaponType(::Const.Items.WeaponType.Mace) || this.isWeaponType(::Const.Items.WeaponType.Musical))
 				{
-					if (this.m.FatigueOnSkillUse == 5)		// quick and dirty check for orc maces
+					if (this.m.FatigueOnSkillUse >= 5)		// quick and dirty check for orc maces
 					{
 						this.m.PoiseDamage = 120;
 					}
