@@ -9,6 +9,11 @@ This mod is the first implementation of a Stun Threshold system.
 
 ### Changes: ###
 
+0.1.11
+	- Remove mention of **Cull** in perk description of **Steelbrow**
+	- Adjust perk description of **Resilient** to match latest Reforged changes
+	- Fix characters, which are immune to stuns, still receiving poise damage
+
 0.1.10
 	- Rename the reforged **Poise** perk into **Flexible** to avoid confusion
 	- Fix musicial instrumnents not having poise

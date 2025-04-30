@@ -78,6 +78,7 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 	}
 
 // New Functions
+	// Return the remaining poise on this brother
 	function getPoise( _properties = null )
 	{
 		if (_properties == null) _properties = this.getContainer().getActor().getCurrentProperties();

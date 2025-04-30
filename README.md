@@ -39,7 +39,7 @@ This mod is the first implementation of a Stun Threshold system.
 - **Versatile Swordsman** grants +120 Poise Damage if a one-handed sword is equipped and +180 Poise Damage if a two-handed sword is equipped
 
 ### Skill Adjustments
-- All skills that had a Stun Chance (!= 0) before now use the Composure system
+- All skills that had a Stun Chance (!= 0) before now use the Poise system
 - **Shieldwall** grants 25% more Poise
 - **Pound** grants 100% more Poise Damage
 - **Charge** inflicts 100 Poise Damage and dazes the target if no stun was applied
@@ -49,8 +49,8 @@ This mod is the first implementation of a Stun Threshold system.
 - **Orc Trophy** no longer grants stun immunity. It now grants 200% more Poise
 
 ## Todo
-- Icon for new Composure effect
-- Icon for Composure stat lines
+- Icon for new Poise effect
+- Icon for Poise stat lines
 - Smarter enemy AI that can predict stuns
 - Some casual playtesting
 
