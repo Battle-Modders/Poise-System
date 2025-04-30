@@ -94,6 +94,8 @@ this.rf_poise_effect <- ::inherit("scripts/skills/skill", {
 	// Returns the amount of turns that the target was stunned. Can be used to apply other effects/behaviors when called manually
 	function onPoiseDamageReceived( _attacker, _skill, _attackPower, _printLog = true, _properties = null )
 	{
+		if (this.getContainer().getActor().getCurrentProperties().IsImmuneToStun) return 0;
+
 		this.m.InversePoise += _attackPower;
 
 		local turnsStunned = 0;
